@@ -9,4 +9,28 @@ function playRound(playerSelection, computerSelection) {
     if (lowercasePlayer == "rock" && lowercaseComp == "scissors"){
         return("You Win! Rock beats Scissors!");
     }
+    else if (lowercasePlayer == "rock" && lowercaseComp == "paper"){
+        return("You Lose! Rock loses to Paper!")
+    }
+    else if (lowercasePlayer == "rock" && lowercaseComp == "rock"){
+        return("It's a tie! Rock ties with Rock.")
+    }
+    else if (lowercasePlayer == "paper" && lowercaseComp == "rock"){
+        return("You Win! Paper beats Rock!")
+    }
+    else if (lowercasePlayer == "paper" && lowercaseComp == "scissors"){
+        return("You Lose! Paper loses to Scissors!")
+    }
+    else if (lowercasePlayer == "paper" && lowercaseComp == "paper"){
+        return("It's a tie! Paper ties with Paper.")
+    }
+    else if (lowercasePlayer == "scissors" && lowercaseComp == "paper"){
+        return("You Win! Scissors beats Paper!")
+    }
+    else if (lowercasePlayer == "scissors" && lowercaseComp == "rock"){
+        return("You Lose! Scissors loses to Rock!")
+    }
+    else if (lowercasePlayer == "scissors" && lowercaseComp == "scissors"){
+        return("It's a tie! Scissors ties with Scissors.")
+    }
 }
