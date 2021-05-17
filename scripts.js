@@ -4,5 +4,9 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    
+    lowercasePlayer = playerSelection.toLowerCase();
+    lowercaseComp = computerSelection.toLowerCase();
+    if (lowercasePlayer == "rock" && lowercaseComp == "scissors"){
+        return("You Win! Rock beats Scissors!");
+    }
 }
