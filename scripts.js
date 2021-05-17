@@ -4,8 +4,8 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    lowercasePlayer = playerSelection.toLowerCase();
-    lowercaseComp = computerSelection.toLowerCase();
+    lowercasePlayer = playerSelection.toLowerCase().toString();
+    lowercaseComp = computerSelection.toLowerCase().toString();
     if (lowercasePlayer == "rock" && lowercaseComp == "scissors"){
         return("You Win! Rock beats Scissors!");
     }
@@ -32,5 +32,13 @@ function playRound(playerSelection, computerSelection) {
     }
     else if (lowercasePlayer == "scissors" && lowercaseComp == "scissors"){
         return("It's a tie! Scissors ties with Scissors.")
+    }
+}
+
+function game() {
+    let i;
+    for (i=0; i<5; i++) {
+        playerInput = window.prompt("Rock, Paper, or Scissors?");
+        console.log(playRound(playerInput, computerPlay()));
     }
 }
