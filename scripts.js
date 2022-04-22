@@ -3,6 +3,7 @@ const rock = document.querySelector(".rock-button");
 const paper = document.querySelector(".paper-button");
 const scissors = document.querySelector(".scissors-button");
 
+
 function computerPlay() {
     let results = ['Rock', 'Paper', 'Scissors'];
     return results[Math.floor(Math.random()*results.length)]
