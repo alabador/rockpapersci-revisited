@@ -1,7 +1,25 @@
 /*Variables*/
-const rock = document.querySelector(".rock-button");
-const paper = document.querySelector(".paper-button");
-const scissors = document.querySelector(".scissors-button");
+const rock = document.querySelector("#rock-button");
+const paper = document.querySelector("#paper-button");
+const scissors = document.querySelector("#scissors-button");
+const play = document.querySelector("#play-button");
+
+
+play.addEventListener('click', game());
+
+
+// const chooseSelection = function() {
+//     rock.addEventListener('click', () => {
+//         console.log('rock'); 
+//     });
+//     paper.addEventListener('click', () => {
+//         console.log('paper'); 
+//     });
+//     rock.addEventListener('click', () => {
+//         console.log('scissors'); 
+//     });
+
+// };
 
 
 function computerPlay() {
@@ -9,9 +27,10 @@ function computerPlay() {
     return results[Math.floor(Math.random()*results.length)]
 }
 
-function playRound(playerSelection, computerSelection) {
-    lowercasePlayer = playerSelection.toLowerCase().toString();
-    lowercaseComp = computerSelection.toLowerCase().toString();
+function playRound(playerSelection) {
+    let lowercasePlayer = playerSelection.toLowerCase().toString();
+    let lowercaseComp = computerPlay();
+    lowercaseComp = lowercaseComp.toLowerCase().toString();
     if (lowercasePlayer == "rock" && lowercaseComp == "scissors"){
         return("You Win! Rock beats Scissors!");
     }
@@ -48,6 +67,7 @@ function game() {
 
      
     playerInput = window.prompt("Rock, Paper, or Scissors?");
+    // playerInput = chooseSelection();
     let result = playRound(playerInput, computerPlay());
 
     if ((result.includes("Win"))) {
