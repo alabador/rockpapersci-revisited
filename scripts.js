@@ -5,13 +5,13 @@ const scissors = document.querySelector("#scissors-button");
 
 
 rock.addEventListener('click', () => {
-    console.log('rock'); 
+    playRound('rock'); 
 });
 paper.addEventListener('click', () => {
-    console.log('paper'); 
+    playRound('paper');
 });
 scissors.addEventListener('click', () => {
-    console.log('scissors'); 
+    playRound('scissors'); 
 });
 
 
@@ -24,6 +24,8 @@ function computerPlay() {
 function playRound(playerSelection) {
     let lowercasePlayer = playerSelection.toLowerCase().toString();
     let lowercaseComp = computerPlay().toLowerCase().toString();
+    
+    
     if (lowercasePlayer == "rock" && lowercaseComp == "scissors"){
         return("You Win! Rock beats Scissors!");
     }
