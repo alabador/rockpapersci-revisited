@@ -1,4 +1,7 @@
-
+/*Variables*/
+const rock = document.querySelector(".rock-button");
+const paper = document.querySelector(".paper-button");
+const scissors = document.querySelector(".scissors-button");
 
 function computerPlay() {
     let results = ['Rock', 'Paper', 'Scissors'];
@@ -42,28 +45,23 @@ function game() {
     let playerScore = 0;
     let compScore = 0;
 
-    let i;
-    for (i=0; i<5; i++) {      
-        playerInput = window.prompt("Rock, Paper, or Scissors?");
-        let result = playRound(playerInput, computerPlay());
+     
+    playerInput = window.prompt("Rock, Paper, or Scissors?");
+    let result = playRound(playerInput, computerPlay());
 
-        if ((result.includes("Win"))) {
-            ++playerScore;
-            console.log("win");
-        }
-    
-        else if ((result.includes("Lose"))) {
-            ++compScore;
-            console.log("loss");
-        }
-
-        /*else if ((playRound(playerInput, computerPlay())).includes("ties")) {
-        playerScore += 0;
-        compScore +=0;
-        }*/
-
-        console.log(result + " Player Score:" + playerScore + "  Computer Score:" + compScore);
+    if ((result.includes("Win"))) {
+        ++playerScore;
+        console.log("win");
     }
+
+    else if ((result.includes("Lose"))) {
+        ++compScore;
+        console.log("loss");
+    }
+
+    console.log(result + " Player Score:" + playerScore + "  Computer Score:" + compScore);
+
+
     if (playerScore > compScore) {
         console.log("Player wins!");
     }
