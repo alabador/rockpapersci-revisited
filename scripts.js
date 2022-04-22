@@ -2,24 +2,18 @@
 const rock = document.querySelector("#rock-button");
 const paper = document.querySelector("#paper-button");
 const scissors = document.querySelector("#scissors-button");
-const play = document.querySelector("#play-button");
 
 
-play.addEventListener('click', game());
+rock.addEventListener('click', () => {
+    console.log('rock'); 
+});
+paper.addEventListener('click', () => {
+    console.log('paper'); 
+});
+scissors.addEventListener('click', () => {
+    console.log('scissors'); 
+});
 
-
-// const chooseSelection = function() {
-//     rock.addEventListener('click', () => {
-//         console.log('rock'); 
-//     });
-//     paper.addEventListener('click', () => {
-//         console.log('paper'); 
-//     });
-//     rock.addEventListener('click', () => {
-//         console.log('scissors'); 
-//     });
-
-// };
 
 
 function computerPlay() {
@@ -29,8 +23,7 @@ function computerPlay() {
 
 function playRound(playerSelection) {
     let lowercasePlayer = playerSelection.toLowerCase().toString();
-    let lowercaseComp = computerPlay();
-    lowercaseComp = lowercaseComp.toLowerCase().toString();
+    let lowercaseComp = computerPlay().toLowerCase().toString();
     if (lowercasePlayer == "rock" && lowercaseComp == "scissors"){
         return("You Win! Rock beats Scissors!");
     }
@@ -60,36 +53,35 @@ function playRound(playerSelection) {
     }
 }
 
-
-function game() {
-    let playerScore = 0;
-    let compScore = 0;
+// function game() {
+//     let playerScore = 0;
+//     let compScore = 0;
 
      
-    playerInput = window.prompt("Rock, Paper, or Scissors?");
-    // playerInput = chooseSelection();
-    let result = playRound(playerInput, computerPlay());
+//     playerInput = window.prompt("Rock, Paper, or Scissors?");
+//     // playerInput = chooseSelection();
+//     let result = playRound(playerInput, computerPlay());
 
-    if ((result.includes("Win"))) {
-        ++playerScore;
-        console.log("win");
-    }
+//     if ((result.includes("Win"))) {
+//         ++playerScore;
+//         console.log("win");
+//     }
 
-    else if ((result.includes("Lose"))) {
-        ++compScore;
-        console.log("loss");
-    }
+//     else if ((result.includes("Lose"))) {
+//         ++compScore;
+//         console.log("loss");
+//     }
 
-    console.log(result + " Player Score:" + playerScore + "  Computer Score:" + compScore);
+//     console.log(result + " Player Score:" + playerScore + "  Computer Score:" + compScore);
 
 
-    if (playerScore > compScore) {
-        console.log("Player wins!");
-    }
-    else if (playerScore < compScore) {
-        console.log("Computer wins!");
-    }
-    else if (playerScore == compScore) {
-        console.log("It's a tie.");
-    }
-}
+//     if (playerScore > compScore) {
+//         console.log("Player wins!");
+//     }
+//     else if (playerScore < compScore) {
+//         console.log("Computer wins!");
+//     }
+//     else if (playerScore == compScore) {
+//         console.log("It's a tie.");
+//     }
+// }
