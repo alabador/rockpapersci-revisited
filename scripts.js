@@ -3,8 +3,8 @@ const rock = document.querySelector("#rock-button");
 const paper = document.querySelector("#paper-button");
 const scissors = document.querySelector("#scissors-button");
 
-const playerResults = document.querySelector('#player-results').innerText;
-const computerResults = document.querySelector('#computer-results').innerText;
+let playerResults = document.querySelector('#player-results');
+let computerResults = document.querySelector('#computer-results');
 
 let playerScore = 0;
 let compScore = 0;
@@ -31,6 +31,10 @@ function playRound(playerSelection) {
     playerSelection = playerSelection.toLowerCase();
     let compSelection = computerPlay().toLowerCase();
     winCons(playerSelection, compSelection);
+
+    //Updates html to mirror score
+    playerResults.innerText = playerScore;
+    computerResults.innerText = compScore;
     console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
 }
 
@@ -67,6 +71,7 @@ function winCons(playerSelection, compSelection) {
         return compScore++;
     }
     else if (playerSelection == "rock" && compSelection == "rock"){
+        console.log('tie');
         return "It's a tie! Rock ties with Rock.";
     }
     else if (playerSelection == "paper" && compSelection == "rock"){
@@ -76,6 +81,7 @@ function winCons(playerSelection, compSelection) {
         return compScore++;
     }
     else if (playerSelection == "paper" && compSelection == "paper"){
+        console.log('tie');
         return "It's a tie! Paper ties with Paper.";
     }
     else if (playerSelection == "scissors" && compSelection == "paper"){
@@ -85,6 +91,7 @@ function winCons(playerSelection, compSelection) {
         return compScore++;
     }
     else if (playerSelection == "scissors" && compSelection == "scissors"){
+        console.log('tie');
         return "It's a tie! Scissors ties with Scissors.";
     }
 }
