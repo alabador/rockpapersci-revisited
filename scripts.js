@@ -30,38 +30,8 @@ function computerPlay() {
 function playRound(playerSelection) {
     playerSelection = playerSelection.toLowerCase();
     let compSelection = computerPlay().toLowerCase();
-    if (playerSelection == "rock" && compSelection == "scissors"){
-        console.log('test');
-        return playerScore++;
-    }
-    else if (playerSelection == "rock" && compSelection == "paper"){
-        console.log('test');
-        return compScore++;
-    }
-    else if (playerSelection == "rock" && compSelection == "rock"){
-        console.log('test');
-        return "It's a tie! Rock ties with Rock.";
-    }
-    else if (playerSelection == "paper" && compSelection == "rock"){
-        return playerScore++;
-    }
-    else if (playerSelection == "paper" && compSelection == "scissors"){
-        return compScore++;
-    }
-    else if (playerSelection == "paper" && compSelection == "paper"){
-        return "It's a tie! Paper ties with Paper.";
-    }
-    else if (playerSelection == "scissors" && compSelection == "paper"){
-        return playerScore++;
-    }
-    else if (playerSelection == "scissors" && compSelection == "rock"){
-        return compScore++;
-    }
-    else if (playerSelection == "scissors" && compSelection == "scissors"){
-        return "It's a tie! Scissors ties with Scissors.";
-    }
-    // console.log(`Player score is ${playerScore}`);
-    // console.log (`Computer score is ${compScore}`);
+    winCons(playerSelection, compSelection);
+    console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
 }
 
 
@@ -81,10 +51,11 @@ function playRound(playerSelection) {
 
 function win() {
     if (playerScore == 5) {
-        return 'Player wins.'
+        console.log('player wins');
+        
     }
     else if (compScore == 5) {
-        return 'Computer wins.'
+        console.log('computer wins');
     }
 }
 
