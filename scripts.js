@@ -2,6 +2,7 @@
 const rock = document.querySelector("#rock-button");
 const paper = document.querySelector("#paper-button");
 const scissors = document.querySelector("#scissors-button");
+const reset = document.querySelector(".reset-button");
 
 let playerResults = document.querySelector('#player-results');
 let computerResults = document.querySelector('#computer-results');
@@ -19,6 +20,7 @@ paper.addEventListener('click', () => {
 scissors.addEventListener('click', () => {
     playRound('scissors'); 
 });
+reset.addEventListener('click', resetGame());
 
 
 
@@ -38,8 +40,13 @@ function playRound(playerSelection) {
     console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
 }
 
-
-
+function resetGame() {
+    playerScore = 0;
+    compScore = 0;
+    playerResults.innerText = playerScore;
+    computerResults.innerText = compScore;
+    console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
+}
 
 // function checkSelection(selection) {
 //     if (selection === 'rock') {
