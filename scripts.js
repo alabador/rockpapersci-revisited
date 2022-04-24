@@ -3,6 +3,7 @@ const rock = document.querySelector("#rock-button");
 const paper = document.querySelector("#paper-button");
 const scissors = document.querySelector("#scissors-button");
 const reset = document.querySelector(".reset-button");
+const winner = document.querySelector("#winner");
 
 let playerResults = document.querySelector('#player-results');
 let computerResults = document.querySelector('#computer-results');
@@ -47,7 +48,6 @@ function playRound(playerSelection) {
     //Updates html to mirror score
     playerResults.innerText = playerScore;
     computerResults.innerText = compScore;
-    console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
     checkWin();
 }
 
@@ -58,7 +58,8 @@ function resetGame() {
     compScore = 0;
     playerResults.innerText = playerScore;
     computerResults.innerText = compScore;
-    console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
+    winner.innerText = '';
+    // console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
 }
 
 /*Checks overall winner based on scores */
@@ -66,10 +67,12 @@ function resetGame() {
 function checkWin() {
     if (playerScore > 4) {
         console.log('player wins');
+        winner.innerText = 'Player wins!';
         
     }
     else if (compScore > 4) {
         console.log('computer wins');
+        winner.innerText = 'Computer wins!';
     }
 };
 
@@ -77,33 +80,39 @@ function checkWin() {
 
 function winCons(playerSelection, compSelection) {
     if (playerSelection == "rock" && compSelection == "scissors"){
+        winner.innerText = `${playerSelection} beats ${compSelection}`;
         return playerScore++;
     }
     else if (playerSelection == "rock" && compSelection == "paper"){
+        winner.innerText = `${playerSelection} loses to ${compSelection}`;
         return compScore++;
     }
     else if (playerSelection == "rock" && compSelection == "rock"){
-        console.log('tie');
+        winner.innerText = `It's a tie. Both players selected ${playerSelection}`;
         return "It's a tie! Rock ties with Rock.";
     }
     else if (playerSelection == "paper" && compSelection == "rock"){
+        winner.innerText = `${playerSelection} beats ${compSelection}`;
         return playerScore++;
     }
     else if (playerSelection == "paper" && compSelection == "scissors"){
+        winner.innerText = `${playerSelection} loses to ${compSelection}`;
         return compScore++;
     }
     else if (playerSelection == "paper" && compSelection == "paper"){
-        console.log('tie');
+        winner.innerText = `It's a tie. Both players selected ${playerSelection}`;
         return "It's a tie! Paper ties with Paper.";
     }
     else if (playerSelection == "scissors" && compSelection == "paper"){
+        winner.innerText = `${playerSelection} beats ${compSelection}`;
         return playerScore++;
     }
     else if (playerSelection == "scissors" && compSelection == "rock"){
+        winner.innerText = `${playerSelection} loses to ${compSelection}`;
         return compScore++;
     }
     else if (playerSelection == "scissors" && compSelection == "scissors"){
-        console.log('tie');
+        winner.innerText = `It's a tie. Both players selected ${playerSelection}`;
         return "It's a tie! Scissors ties with Scissors.";
     }
 }
