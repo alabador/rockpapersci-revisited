@@ -59,7 +59,7 @@ function resetGame() {
     playerResults.innerText = playerScore;
     computerResults.innerText = compScore;
     winner.innerText = '';
-    // console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
+    enableOnReset();
 }
 
 /*Checks overall winner based on scores */
@@ -68,13 +68,27 @@ function checkWin() {
     if (playerScore > 4) {
         console.log('player wins');
         winner.innerText = 'Player wins!';
+        disableOnWin();
         
     }
     else if (compScore > 4) {
         console.log('computer wins');
         winner.innerText = 'Computer wins!';
+        disableOnWin();
     }
 };
+
+function disableOnWin() {
+    rock.setAttribute('disabled', "");
+    paper.setAttribute('disabled', "");
+    scissors.setAttribute('disabled', "");
+}
+
+function enableOnReset() {
+    rock.removeAttribute('disabled');
+    paper.removeAttribute('disabled');
+    scissors.removeAttribute('disabled');
+}
 
 /*Checks for the winner of a single round of RPS*/
 
