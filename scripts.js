@@ -10,7 +10,7 @@ let computerResults = document.querySelector('#computer-results');
 let playerScore = 0;
 let compScore = 0;
 
-
+/*Event Listeners for buttons*/
 rock.addEventListener('click', () => {
     playRound('rock');
 });
@@ -25,11 +25,19 @@ reset.addEventListener('click', function() {
 });
 
 
+/*Function for computer to randomly select 
+from rock, paper or scissors*/
 
 function computerPlay() {
     let results = ['Rock', 'Paper', 'Scissors'];
     return results[Math.floor(Math.random()*results.length)]
 }
+
+/*Takes in player selection from event listener and 
+computer selection from computerPlay(). 
+Checks who wins that round in winCons(), 
+and checks overall winner when calling checkWin()
+*/
 
 function playRound(playerSelection) {
     playerSelection = playerSelection.toLowerCase();
@@ -40,7 +48,10 @@ function playRound(playerSelection) {
     playerResults.innerText = playerScore;
     computerResults.innerText = compScore;
     console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
+    checkWin();
 }
+
+/*Resets scores and text on screen*/
 
 function resetGame() {
     playerScore = 0;
@@ -50,27 +61,19 @@ function resetGame() {
     console.log(`Player score: ${playerScore} | Comp Score: ${compScore}`);
 }
 
-// function checkSelection(selection) {
-//     if (selection === 'rock') {
-//         return 
-//     }
-//     else if (selection === 'paper') {
+/*Checks overall winner based on scores */
 
-//     }
-//     else if (selection === 'scissors') {
-
-//     }
-// }
-
-function win() {
-    if (playerScore == 5) {
+function checkWin() {
+    if (playerScore > 4) {
         console.log('player wins');
         
     }
-    else if (compScore == 5) {
+    else if (compScore > 4) {
         console.log('computer wins');
     }
-}
+};
+
+/*Checks for the winner of a single round of RPS*/
 
 function winCons(playerSelection, compSelection) {
     if (playerSelection == "rock" && compSelection == "scissors"){
