@@ -20,7 +20,9 @@ paper.addEventListener('click', () => {
 scissors.addEventListener('click', () => {
     playRound('scissors'); 
 });
-reset.addEventListener('click', resetGame());
+reset.addEventListener('click', function() {
+    resetGame();
+});
 
 
 
