@@ -14,3 +14,40 @@
 
 
 /*Fonts*/
+
+
+
+/*Base Styles*/
+.game-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10vw;
+}
+
+#winner {
+    font-size: 1.5em;
+}
+
+#game-container {
+    justify-content: space-evenly;
+}
+
+.button {
+    border-style: none;
+    padding: 3em;
+    cursor: pointer;
+
+}
