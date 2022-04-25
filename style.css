@@ -1,0 +1,16 @@
+/*Import styles*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+/*Variables*/
+
+
+/*Reset*/
+
+* {
+    margin: 0;
+    padding: 0; 
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*Fonts*/
