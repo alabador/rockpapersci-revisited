@@ -10,33 +10,39 @@
 </head>
 
 <body>
-  
-<div class="container" id="game-container">
-  <div class="rock-container">
-      <button class="button" id="rock-button">Rock</button>
-  </div>
-  <div class="paper-container">
-      <button class="button" id="paper-button">Paper</button>
-  </div>
-  <div class="scissors-container">
-      <button class="button" id="scissors-button">Scissors</button>
-  </div>
-</div>
-<div class="container" id="results-container">
-    <div class="results" id="player-results-container">
-        <h3>Player Score</h3>
-        <p id="player-results">0</p>
-    </div>
-    <div class="results" id="computer-results-container">
-        <h3>Computer Score</h3>
-        <p id="computer-results">0</p>
-    </div>
-    <div id="winner-container">
+<div class="game-container">
+    
+    <div class="container" id="results-container">
+        <div class="results" id="player-results-container">
+            <h3>Player Score</h3>
+            <p id="player-results">0</p>
+        </div>
+        <div class="results" id="computer-results-container">
+            <h3>Computer Score</h3>
+            <p id="computer-results">0</p>
+        </div>
+    </div> 
+    
+    <div class="container" id="winner-container">
         <p id="winner"></p>
     </div>
-</div>
-<div class= "container" id="reset-container">
-    <button class="reset-button">Reset</button>
+    
+    <div class="container" id="game-container">
+      <div class="rock-container">
+          <button class="button" id="rock-button">Rock</button>
+      </div>
+      <div class="paper-container">
+          <button class="button" id="paper-button">Paper</button>
+      </div>
+      <div class="scissors-container">
+          <button class="button" id="scissors-button">Scissors</button>
+      </div>
+    </div>
+    
+    <div class= "container" id="reset-container">
+        <button class="reset-button">Reset</button>
+    </div>    
+
 </div>
 
 <script src="scripts.js"></script>
