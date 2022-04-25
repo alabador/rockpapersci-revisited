@@ -2,7 +2,7 @@
 const rock = document.querySelector("#rock-button");
 const paper = document.querySelector("#paper-button");
 const scissors = document.querySelector("#scissors-button");
-const reset = document.querySelector(".reset-button");
+const reset = document.querySelector("#reset-button");
 const winner = document.querySelector("#winner");
 
 let playerResults = document.querySelector('#player-results');
@@ -58,7 +58,7 @@ function resetGame() {
     compScore = 0;
     playerResults.innerText = playerScore;
     computerResults.innerText = compScore;
-    winner.innerText = '';
+    winner.innerText = 'Choose your weapon!';
     enableOnReset();
 }
 

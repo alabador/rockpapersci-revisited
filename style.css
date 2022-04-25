@@ -41,13 +41,28 @@
     font-size: 1.5em;
 }
 
-#game-container {
-    justify-content: space-evenly;
+#select-container {
+    justify-content: center;
 }
 
 .button {
     border-style: none;
     padding: 3em;
     cursor: pointer;
+    transition: all 150ms ease-out;
+    background-color: rgb(238, 248, 255);
+    box-shadow: 2px 2px 4px rgb(179, 179, 179);
+    border-radius: 16px;
+    margin: 0 5vw;
+}
 
+.button:hover {  
+    background-color: rgb(187, 219, 235)
+}
+
+#reset-button {
+    padding: 2em 3em;
+    width: 50%;
+    background-color: rgb(223, 35, 35);
+    color: white;
 }
