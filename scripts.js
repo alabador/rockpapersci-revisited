@@ -48,6 +48,13 @@ function playRound(playerSelection) {
     //Updates html to mirror score
     playerResults.innerText = playerScore;
     computerResults.innerText = compScore;
+
+    //Adds and removes class to show a game outcome was given
+    winner.classList.add('winner-selected');
+    setTimeout(() => {
+        winner.classList.remove('winner-selected');
+    }, "200");
+
     checkWin();
 }
 

@@ -39,10 +39,27 @@
 
 #winner {
     font-size: 1.5em;
+    padding: 1em;
+    transition: all 200ms ease-in-out;
+}
+
+.winner-selected {
+    font-size: 2em;
+    background-color: rgb(185, 234, 253);
+    border-radius: 8px;
 }
 
 #select-container {
     justify-content: center;
+}
+
+#player-results, #computer-results {
+    padding: 0.5em;
+}
+
+.score-underline {
+    text-decoration: underline;
+    text-decoration-color: rgb(185, 234, 253);
 }
 
 .button {
